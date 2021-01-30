@@ -15,7 +15,7 @@ namespace LightsOut.Control
             mover = GetComponent<Mover>();
         }
 
-        private void Update()
+        private void FixedUpdate()
         {
             MoveInput();
         }

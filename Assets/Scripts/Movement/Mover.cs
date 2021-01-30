@@ -6,21 +6,19 @@ namespace LightsOut.Movement
     {
         [SerializeField] float speed = 2f;
 
-        float positionX;
-        float positionY;
+        Vector2 velocity;
+
+        Rigidbody2D rb2D;
 
         private void Awake()
         {
-            positionX = transform.position.x;
-            positionY = transform.position.y;
+            rb2D = GetComponent<Rigidbody2D>();
         }
 
         public void Move(float controlThrowX, float controlThrowY)
         {
-            positionX = positionX + Time.deltaTime * speed * controlThrowX;
-            positionY = positionY + Time.deltaTime * speed * controlThrowY;
-
-            transform.position = new Vector2(positionX, positionY);
+            velocity = new Vector2(controlThrowX * speed, controlThrowY * speed);
+            rb2D.velocity = velocity;
         }
     }
 }
