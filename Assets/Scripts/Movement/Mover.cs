@@ -19,6 +19,16 @@ namespace LightsOut.Movement
         {
             velocity = new Vector2(controlThrowX * speed, controlThrowY * speed);
             rb2D.velocity = velocity;
+            FlipCharacter();
+        }
+
+        private void FlipCharacter()
+        {
+            bool playerHasHorizontalSpeed = Mathf.Abs(rb2D.velocity.x) > Mathf.Epsilon;
+            if (playerHasHorizontalSpeed)
+            {
+                transform.localScale = new Vector2(Mathf.Sign(rb2D.velocity.x), 1f);
+            }
         }
     }
 }
