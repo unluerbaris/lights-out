@@ -27,7 +27,7 @@ namespace LightsOut.Movement
             bool playerHasHorizontalSpeed = Mathf.Abs(rb2D.velocity.x) > Mathf.Epsilon;
             if (playerHasHorizontalSpeed)
             {
-                transform.localScale = new Vector2(Mathf.Sign(rb2D.velocity.x), 1f);
+                transform.localScale = new Vector2(-Mathf.Sign(rb2D.velocity.x), 1f);
             }
         }
     }
