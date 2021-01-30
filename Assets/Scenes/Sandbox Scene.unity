@@ -3228,7 +3228,7 @@ GameObject:
   - component: {fileID: 1827505437}
   - component: {fileID: 1827505436}
   - component: {fileID: 1827505439}
-  - component: {fileID: 1827505438}
+  - component: {fileID: 1827505441}
   m_Layer: 0
   m_Name: Enemy
   m_TagString: Untagged
@@ -3301,27 +3301,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!50 &1827505438
-Rigidbody2D:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1827505435}
-  m_BodyType: 0
-  m_Simulated: 1
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 1
-  m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 0
-  m_Material: {fileID: 0}
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 4
 --- !u!61 &1827505439
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -3348,6 +3327,20 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 2}
   m_EdgeRadius: 0
+--- !u!114 &1827505441
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1827505435}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f5476231800eb44c49673dbb60803419, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 1
+  stoppingDistance: 1.25
 --- !u!1 &2138960595
 GameObject:
   m_ObjectHideFlags: 0
@@ -3437,30 +3430,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 3704092519850744592, guid: 17dbfd4cc70b546298f7162dd7ed1154, type: 3}
-      propertyPath: m_ApplyToSortingLayers.Array.size
-      value: 6
-      objectReference: {fileID: 0}
-    - target: {fileID: 3704092519850744592, guid: 17dbfd4cc70b546298f7162dd7ed1154, type: 3}
-      propertyPath: m_ApplyToSortingLayers.Array.data[4]
-      value: 1518486887
-      objectReference: {fileID: 0}
-    - target: {fileID: 3704092519850744592, guid: 17dbfd4cc70b546298f7162dd7ed1154, type: 3}
-      propertyPath: m_ApplyToSortingLayers.Array.data[5]
-      value: 1724503641
-      objectReference: {fileID: 0}
-    - target: {fileID: 3704092520795750079, guid: 17dbfd4cc70b546298f7162dd7ed1154, type: 3}
-      propertyPath: m_ApplyToSortingLayers.Array.size
-      value: 6
-      objectReference: {fileID: 0}
-    - target: {fileID: 3704092520795750079, guid: 17dbfd4cc70b546298f7162dd7ed1154, type: 3}
-      propertyPath: m_ApplyToSortingLayers.Array.data[4]
-      value: 1518486887
-      objectReference: {fileID: 0}
-    - target: {fileID: 3704092520795750079, guid: 17dbfd4cc70b546298f7162dd7ed1154, type: 3}
-      propertyPath: m_ApplyToSortingLayers.Array.data[5]
-      value: 1724503641
-      objectReference: {fileID: 0}
     - target: {fileID: 3704092521474676840, guid: 17dbfd4cc70b546298f7162dd7ed1154, type: 3}
       propertyPath: m_RootOrder
       value: 4
