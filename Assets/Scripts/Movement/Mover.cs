@@ -6,7 +6,7 @@ namespace LightsOut.Movement
     {
         [SerializeField] float speed = 2f;
 
-        Vector2 velocity;
+        Vector2 normalizedVelocity;
 
         Rigidbody2D rb2D;
 
@@ -17,8 +17,8 @@ namespace LightsOut.Movement
 
         public void Move(float controlThrowX, float controlThrowY)
         {
-            velocity = new Vector2(controlThrowX * speed, controlThrowY * speed);
-            rb2D.velocity = velocity;
+            normalizedVelocity = new Vector2(controlThrowX, controlThrowY).normalized;
+            rb2D.velocity = normalizedVelocity * speed;
             FlipCharacter();
         }
 
