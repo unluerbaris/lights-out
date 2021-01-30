@@ -1,4 +1,3 @@
-using LightsOut.Movement;
 using UnityEngine;
 
 namespace LightsOut.Control
@@ -41,7 +40,6 @@ namespace LightsOut.Control
         {
             if (!isScared && collision.gameObject.tag == "Player")
             {
-                Debug.Log("Flashlight, run away!!!");
                 isScared = true;
                 escapeTimer = 0;
             }
