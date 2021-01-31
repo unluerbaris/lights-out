@@ -35,21 +35,36 @@ namespace LightsOut.Control
                     isScared = false;
                 }
 
-                transform.position = Vector2.MoveTowards(transform.position,
-                                                         -playerTransform.position * 100,
-                                                         speed * speedMultiplier * Time.deltaTime);
+                //transform.position = Vector2.MoveTowards(transform.position,
+                //                                         new Vector2(-playerTransform.forward.x * 1000,
+                //                                                     -playerTransform.forward.y * 1000),
+                //                                                     speed * speedMultiplier * Time.deltaTime);
             }
+        }
+
+        private void GotScared()
+        {
+            speedMultiplier = Random.Range(1.5f, 3f);
+            isScared = true;
+            escapeTimer = 0;
         }
 
         private void OnTriggerEnter2D(Collider2D collision)
         {
             if (!isScared && collision.gameObject.tag == "Player")
             {
-                speedMultiplier = Random.Range(1.5f, 3f);
-                Debug.Log(speedMultiplier);
-                isScared = true;
-                escapeTimer = 0;
+                GotScared();
             }
         }
+
+        private void OnTriggerStay2D(Collider2D collision)
+        {
+            if (!isScared && collision.gameObject.tag == "Player")
+            {
+                isScared = true;
+            }
+        }
+
+
     }
 }

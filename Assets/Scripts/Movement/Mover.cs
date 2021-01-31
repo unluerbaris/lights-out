@@ -9,6 +9,7 @@ namespace LightsOut.Movement
         Vector2 normalizedVelocity;
         bool playerHasHorizontalSpeed;
         bool playerHasVerticalSpeed;
+        bool isFacingRight = true;
 
         Rigidbody2D rb2D;
         Animator myAnimator;
@@ -29,12 +30,20 @@ namespace LightsOut.Movement
 
         private void FlipCharacter()
         {
+            bool isFacingLeft = rb2D.velocity.x < 0;
+
             playerHasHorizontalSpeed = Mathf.Abs(rb2D.velocity.x) > 0.1;
             playerHasVerticalSpeed = Mathf.Abs(rb2D.velocity.y) > 0.1;
 
-            if (playerHasHorizontalSpeed)
+            if (playerHasHorizontalSpeed && Mathf.Sign(rb2D.velocity.x) == -1 && isFacingRight)
             {
-                transform.localScale = new Vector2(-Mathf.Sign(rb2D.velocity.x), 1f);
+                isFacingRight = false;
+                transform.Rotate(0f, 180f, 0f);
+            }
+            else if (playerHasHorizontalSpeed && Mathf.Sign(rb2D.velocity.x) == 1 && !isFacingRight)
+            {
+                isFacingRight = true;
+                transform.Rotate(0f, 180f, 0f);
             }
         }
     }
