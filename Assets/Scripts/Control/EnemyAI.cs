@@ -35,7 +35,9 @@ namespace LightsOut.Control
                     isScared = false;
                 }
 
-                transform.position = Vector2.MoveTowards(transform.position, -playerTransform.position, speed * speedMultiplier* Time.deltaTime);
+                transform.position = Vector2.MoveTowards(transform.position,
+                                                         -playerTransform.position * 100,
+                                                         speed * speedMultiplier * Time.deltaTime);
             }
         }
 
