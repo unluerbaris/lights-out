@@ -8,6 +8,8 @@ namespace LightsOut.Control
         [SerializeField] float stoppingDistance = 1f;
         [SerializeField] float escapeTime = 5f;
 
+        float speedMultiplier = 1f;
+
         bool isScared = false;
         float escapeTimer = Mathf.Infinity;
         
@@ -24,7 +26,7 @@ namespace LightsOut.Control
 
             if (!isScared && Vector2.Distance(transform.position, playerTransform.position) > stoppingDistance)
             {
-                transform.position = Vector2.MoveTowards(transform.position, playerTransform.position, speed * Time.deltaTime);
+                transform.position = Vector2.MoveTowards(transform.position, playerTransform.position, speed * speedMultiplier * Time.deltaTime);
             }
             else
             {
@@ -32,7 +34,8 @@ namespace LightsOut.Control
                 {
                     isScared = false;
                 }
-                transform.position = Vector2.MoveTowards(transform.position, -playerTransform.position, speed * Time.deltaTime);
+
+                transform.position = Vector2.MoveTowards(transform.position, -playerTransform.position, speed * speedMultiplier* Time.deltaTime);
             }
         }
 
@@ -40,6 +43,8 @@ namespace LightsOut.Control
         {
             if (!isScared && collision.gameObject.tag == "Player")
             {
+                speedMultiplier = Random.Range(1.5f, 3f);
+                Debug.Log(speedMultiplier);
                 isScared = true;
                 escapeTimer = 0;
             }
