@@ -8,6 +8,7 @@ namespace LightsOut.Environment
         [SerializeField] GameObject[] objects;
         [SerializeField] Text numOfItemsCollected;
         [SerializeField] Text totalNumOfItems;
+        [SerializeField] GameObject winScreen;
 
         int objectIndex = 0;
 
@@ -21,7 +22,12 @@ namespace LightsOut.Environment
         {
             numOfItemsCollected.text = objectIndex.ToString();
 
-            if (objectIndex >= objects.Length) return;
+            if (objectIndex >= objects.Length)
+            {
+                winScreen.SetActive(true);
+                Time.timeScale = 0;
+                return;
+            }
 
             int randomIndex = Random.Range(0, transform.childCount - 1);
         
