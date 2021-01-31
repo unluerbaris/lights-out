@@ -13,7 +13,7 @@ namespace LightsOut.Environment
             SpawnObject();
         }
 
-        private void SpawnObject()
+        public void SpawnObject()
         {
             if (objectIndex >= objects.Length) return;
 
