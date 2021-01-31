@@ -1674,8 +1674,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   objects:
   - {fileID: 2001648672084028486, guid: 1739fadeece604c02a61ef13d1fcae9d, type: 3}
-  - {fileID: 2001648672084028486, guid: 1739fadeece604c02a61ef13d1fcae9d, type: 3}
-  - {fileID: 2001648672084028486, guid: 1739fadeece604c02a61ef13d1fcae9d, type: 3}
+  - {fileID: 2001648672084028486, guid: 7c9c00d9fab0a4728b3ab24f01725424, type: 3}
+  - {fileID: 2001648672084028486, guid: 00726ed8dcd5c454282c0b1870709fed, type: 3}
+  - {fileID: 2001648672084028486, guid: 39c55596213f84bc2aedebaa86391615, type: 3}
+  - {fileID: 2001648672084028486, guid: 79490a9a06bf04f28a6ce8aacbb230fc, type: 3}
 --- !u!4 &1259998285
 Transform:
   m_ObjectHideFlags: 0
