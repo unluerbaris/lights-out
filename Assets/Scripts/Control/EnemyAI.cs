@@ -61,7 +61,7 @@ namespace LightsOut.Control
         {
             if (!isScared && collision.gameObject.tag == "Flashlight")
             {
-                isScared = true;
+                GotScared();
             }
         }
     }
