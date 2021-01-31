@@ -51,7 +51,7 @@ namespace LightsOut.Control
 
         private void OnTriggerEnter2D(Collider2D collision)
         {
-            if (!isScared && collision.gameObject.tag == "Player")
+            if (!isScared && collision.gameObject.tag == "Flashlight")
             {
                 GotScared();
             }
@@ -59,12 +59,10 @@ namespace LightsOut.Control
 
         private void OnTriggerStay2D(Collider2D collision)
         {
-            if (!isScared && collision.gameObject.tag == "Player")
+            if (!isScared && collision.gameObject.tag == "Flashlight")
             {
                 isScared = true;
             }
         }
-
-
     }
 }

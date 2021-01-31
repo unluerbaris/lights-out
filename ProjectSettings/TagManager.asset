@@ -5,6 +5,8 @@ TagManager:
   serializedVersion: 2
   tags:
   - UI
+  - Enemy
+  - Flashlight
   layers:
   - Default
   - TransparentFX
@@ -14,10 +16,10 @@ TagManager:
   - UI
   - Object Detector
   - Object
-  - 
-  - 
-  - 
-  - 
+  - Enemy
+  - Wall
+  - Furniture
+  - Player
   - 
   - 
   - 
